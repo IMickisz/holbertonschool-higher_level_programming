@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""0-square.py
+"""2-square.py
 
 Write a class Square that defines a square by:
+
 - Private instance attribute: size
+
 - Instantiation with optional size: def __init__(self, size=0):
 size must be an integer, otherwise raise a TypeError exception with the message
 size must be an integer
