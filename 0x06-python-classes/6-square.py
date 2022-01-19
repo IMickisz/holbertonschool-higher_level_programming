@@ -92,7 +92,8 @@ class Square:
         """This method print in stdout the square made of #"""
         if self.__size == 0:
             print("")
-        elif self.__position[1] > 0:
+            return
+        for i in range (0, self.__position[1]):
             print("")
         for row in range(self.__size):
             for pos in range(self.__position[0]):
