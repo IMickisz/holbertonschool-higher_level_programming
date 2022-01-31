@@ -12,14 +12,14 @@ class MyInt(int):
     def __init__(self, my_int):
         self.my_int = my_int
 
+    def __new__(cls, *args, **kwargs):
+        """create a new instance of the class"""
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
+
     def __eq__(self, other):
-        """Tests if an integer is equal to another integer.
-        It returns False if yes, True otherwise.
-        """
-        return self.value != other
+        """what was != is now =="""
+        return int(self) != other
 
     def __ne__(self, other):
-        """Tests if an integer is not equal to another integer.
-        It returns False if yes, True otherwise.
-        """
-        return self.value == other
+        """what was == is now !="""
+        return int(self) == other
