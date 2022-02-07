@@ -59,10 +59,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 2, 1)
         if cls.__name__ == 'Square':
             dummy = cls(2, 2)
+        elif cls.__name__ == 'Rectangle':
+            dummy = cls(1, 2, 1)
         dummy.update(**dictionary)
         return dummy
 
