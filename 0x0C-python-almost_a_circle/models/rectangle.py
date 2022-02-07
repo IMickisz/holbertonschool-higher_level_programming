@@ -131,7 +131,8 @@ class Rectangle(Base):
             my_list = ["id", "width", "height", "x", "y"]
             i = 0
             for arg in args:
-                setattr(self, my_list[i], arg)
+                if i != 5:
+                    setattr(self, my_list[i], arg)
                 i += 1
 
     def to_dictionary(self):
