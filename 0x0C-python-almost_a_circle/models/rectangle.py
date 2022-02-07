@@ -117,8 +117,7 @@ class Rectangle(Base):
     def __str__(self):
         """Tells the main program how to print a Rectangle instance."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                       self.__y,
-                                                       self.__width,
+                                                       self.__y, self.__width,
                                                        self.__height)
 
     def update(self, *args, **kwargs):
@@ -129,8 +128,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
             return
         else:
-            my_list = ["id", "width", "height",
-                       "x", "y"]
+            my_list = ["id", "width", "height", "x", "y"]
             i = 0
             for arg in args:
                 setattr(self, my_list[i], arg)

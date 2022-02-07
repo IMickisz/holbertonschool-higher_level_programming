@@ -16,8 +16,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """This method tells the main program how to print a square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
-                                                 self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
 
     @property
     def size(self):
@@ -38,8 +38,7 @@ class Square(Rectangle):
                 setattr(self, key, value)
             return
         else:
-            my_list = ["id", "size",
-                       "x", "y"]
+            my_list = ["id", "size", "x", "y"]
             i = 0
             for arg in args:
                 setattr(self, my_list[i], arg)
