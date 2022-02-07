@@ -61,7 +61,7 @@ class Base:
         """returns an instance with all attributes already set"""
         if cls.__name__ is "Rectangle":
             dummy = cls(1, 2, 3, 4, 5)
-        if cls.__name__ is "Square":
+        elif cls.__name__ is "Square":
             dummy = cls(1, 2, 3, 4)
         dummy.update(**dictionary)
         return dummy
