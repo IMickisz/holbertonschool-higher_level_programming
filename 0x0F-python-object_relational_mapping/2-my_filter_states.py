@@ -14,6 +14,7 @@ if __name__ == "__main__":
                    .format(argv[4]))
     rows = cursor.fetchall()
     for row in rows:
+        if row[1] == argv[4]:
         print(row)
     cursor.close()
     db.close()
