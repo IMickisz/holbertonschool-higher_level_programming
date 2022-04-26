@@ -7,16 +7,17 @@ def find_peak(list_of_integers):
 
     if not list_of_integers:
         return None
-    elif len(list_of_integers) == 1:
-        return list_of_integers[0]
-    elif len(list_of_integers) == 2:
-        return max(list_of_integers)
+    lenght = len(list_of_integers)
+    return find_peak_until(list_of_integers, 0, lenght - 1, lenght)
 
-    mid = int(len(list_of_integers) / 2)
-    if list_of_integers[mid] > list_of_integers[mid - 1] and\
-       list_of_integers[mid] > list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    elif list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+def find_peak_until(li, low, high, n):
+    """Function that returns a peak of a list of integers"""
+    middle = int(low + (high - low) / 2)
+
+    if (middle == 0 or li[middle] >= li[middle - 1]) and \
+       (middle == n - 1 or li[middle] >= li[middle + 1]):
+        return li[middle]
+    elif middle > 0 and li[middle] < li[middle - 1]:
+        return find_peak_until(li, low, middle - 1, n)
     else:
-        return find_peak(list_of_integers[mid + 1:])
+        return find_peak_until(li, middle + 1, high, n)
