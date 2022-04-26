@@ -10,6 +10,7 @@ def find_peak(list_of_integers):
     lenght = len(list_of_integers)
     return find_peak_until(list_of_integers, 0, lenght - 1, lenght)
 
+
 def find_peak_until(li, low, high, n):
     """Function that returns a peak of a list of integers"""
     middle = int(low + (high - low) / 2)
